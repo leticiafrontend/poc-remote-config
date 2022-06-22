@@ -5,6 +5,7 @@ import { PageListOne } from '../components/PageListOne';
 import { PageListTwo } from '../components/PageListTwo';
 import { Home } from '../components/Home';
 import { Header } from '../components/Header';
+import { Container } from '../components/Container';
 
 const TOGGLE = true;
 
@@ -34,15 +35,17 @@ const listRoutes = [
 export const Routes = () => (
   <BrowserRouter>
     <Header />
-    <RoutesDom>
-      {listRoutes.map((route) => (
-        <Route
-          key={route.path}
-          path={route.path}
-          exact={route.exact}
-          element={route.component}
-        />
-      ))}
-    </RoutesDom>
+    <Container>
+      <RoutesDom>
+        {listRoutes.map((route) => (
+          <Route
+            key={route.path}
+            path={route.path}
+            exact={route.exact}
+            element={route.component}
+          />
+        ))}
+      </RoutesDom>
+    </Container>
   </BrowserRouter>
 );
