@@ -1,0 +1,33 @@
+.header {
+  width: 100%;
+  height: 80px;
+}
+
+.header a {
+  text-decoration: none;
+}
+
+.color-black {
+  background: black;
+}
+.color-black a {
+  color: white;
+}
+
+.header-white {
+  background: white;
+}
+
+.header-white a {
+  color: black;
+}
+
+.menu {
+  max-width: 1280px;
+  height: 100%;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
