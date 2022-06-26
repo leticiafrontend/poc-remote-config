@@ -18,7 +18,7 @@ export const setToggle = (state, action) => {
   return newState;
 };
 
-const reducer = (state, action) => {
+const reducer = (state = INITIAL_STATE, action) => {
   if (action.type === '@FEATURE_TOGGLES/SET_FEATURE_TOGGLE') {
     return setToggle(state, action);
   }
