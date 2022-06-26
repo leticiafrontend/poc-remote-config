@@ -7,6 +7,7 @@ import { Home } from '../components/Home';
 import { Header } from '../components/Header';
 import { Container } from '../components/Container';
 import { useSelector } from 'react-redux';
+import { NotFound } from '../components/NotFound';
 
 export const Routes = () => {
   const { toggles } = useSelector((state) => state.toggles);
@@ -29,6 +30,10 @@ export const Routes = () => {
       path: !!TOGGLE_CHANGE_ROUTER ? '/toggle-ligado' : '/toggle-desligado',
       exact: true,
       component: !!TOGGLE_CHANGE_ROUTER ? <PageToggleOn /> : <PageToggleOff />,
+    },
+    {
+      path: '*',
+      component: <NotFound />,
     },
   ];
 

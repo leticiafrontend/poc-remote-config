@@ -6,7 +6,7 @@ export const INITIAL_STATE = {
   },
 };
 
-export const setToggle = (state, action) => {
+const setToggle = (state, action) => {
   const newState = {
     ...state,
     toggles: {
