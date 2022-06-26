@@ -1,6 +1,6 @@
 <br />
 <p align="center">
-  <img src="assets/images/feature-toggle.jpeg" alt="feature toggle" height="200">
+  <img src="src/assets/images/feature-toggle.jpeg" alt="feature toggle" height="200">
   <h1 align="center">Feature Toggle - Remote Config</h1>
 </p>
 

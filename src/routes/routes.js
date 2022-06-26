@@ -1,13 +1,13 @@
 import { BrowserRouter, Route, Routes as RoutesDom } from 'react-router-dom';
-import { PageToggleOff } from '../components/PageToggleOff';
-import { PageToggleOn } from '../components/PageToggleOn';
-import { PageListOne } from '../components/PageListOne';
-import { PageListTwo } from '../components/PageListTwo';
-import { Home } from '../components/Home';
+import { useSelector } from 'react-redux';
+import { PageToggleOff } from '../pages/PageToggleOff';
+import { PageToggleOn } from '../pages/PageToggleOn';
+import { PageListOne } from '../pages/PageListOne';
+import { PageListTwo } from '../pages/PageListTwo';
+import { Home } from '../pages/Home';
+import { NotFound } from '../pages/NotFound';
 import { Header } from '../components/Header';
 import { Container } from '../components/Container';
-import { useSelector } from 'react-redux';
-import { NotFound } from '../components/NotFound';
 
 export const Routes = () => {
   const { toggles } = useSelector((state) => state.toggles);
