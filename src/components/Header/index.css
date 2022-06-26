@@ -7,6 +7,10 @@
   text-decoration: none;
 }
 
+.header li {
+  list-style-type: none;
+}
+
 .color-black {
   background: black;
 }
@@ -14,11 +18,11 @@
   color: white;
 }
 
-.header-white {
+.color-white {
   background: white;
 }
 
-.header-white a {
+.color-white a {
   color: black;
 }
 

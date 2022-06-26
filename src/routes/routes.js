@@ -6,46 +6,47 @@ import { PageListTwo } from '../components/PageListTwo';
 import { Home } from '../components/Home';
 import { Header } from '../components/Header';
 import { Container } from '../components/Container';
+import { useSelector } from 'react-redux';
 
-const TOGGLE = true;
+export const Routes = () => {
+  const { toggles } = useSelector((state) => state.toggles);
 
-const listRoutes = [
-  {
-    path: '/',
-    exact: true,
-    component: <Home />,
-  },
-  {
-    path: '/listas',
-    exact: true,
-    component: !!TOGGLE ? <PageListOne /> : <PageListTwo />,
-  },
-  {
-    path: '/toggle-desligado',
-    exact: true,
-    component: <PageToggleOff />,
-  },
-  {
-    path: '/toggle-ligado',
-    exact: true,
-    component: <PageToggleOn />,
-  },
-];
+  const TOGGLE_CHANGE_ROUTER = toggles.change_router_toggle;
+  const TOGGLE_CHANGE_LIST = toggles.change_list;
 
-export const Routes = () => (
-  <BrowserRouter>
-    <Header />
-    <Container>
-      <RoutesDom>
-        {listRoutes.map((route) => (
-          <Route
-            key={route.path}
-            path={route.path}
-            exact={route.exact}
-            element={route.component}
-          />
-        ))}
-      </RoutesDom>
-    </Container>
-  </BrowserRouter>
-);
+  const listRoutes = [
+    {
+      path: '/',
+      exact: true,
+      component: <Home />,
+    },
+    {
+      path: '/listas',
+      exact: true,
+      component: !!TOGGLE_CHANGE_LIST ? <PageListOne /> : <PageListTwo />,
+    },
+    {
+      path: !!TOGGLE_CHANGE_ROUTER ? '/toggle-ligado' : '/toggle-desligado',
+      exact: true,
+      component: !!TOGGLE_CHANGE_ROUTER ? <PageToggleOn /> : <PageToggleOff />,
+    },
+  ];
+
+  return (
+    <BrowserRouter>
+      <Header />
+      <Container>
+        <RoutesDom>
+          {listRoutes.map((route) => (
+            <Route
+              key={route.path}
+              path={route.path}
+              exact={route.exact}
+              element={route.component}
+            />
+          ))}
+        </RoutesDom>
+      </Container>
+    </BrowserRouter>
+  );
+};
